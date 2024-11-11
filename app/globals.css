@@ -2,20 +2,34 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
 body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
+  @apply bg-black;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.sticky-section {
+  position: sticky;
+  top: 0;
+  /* Uncomment and adjust for visibility when overlapping */
+  /* background-color: white; */
+  /* padding: 20px; Optional for spacing */
+}
+
+/* Ensure each child fills the viewport height */
+/* .sticky-section>div {
+  min-height: 92%;
+} */
+
+@layer base {
+  html, body {
+    font-family: 'Urbanist', sans-serif;
+  }
 }
